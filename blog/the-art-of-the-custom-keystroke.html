@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Art of the Custom Keystroke — What Makes a Bespoke Keyboard Worth It | Keystroke Atelier</title>
+  <meta name="description" content="Discover what separates a custom keyboard commission from off-the-shelf options — from materials and switch selection to the Keystroke Atelier craftsmanship process. A guide to bespoke mechanical keyboards.">
+  <meta name="keywords" content="custom keyboard commission, bespoke mechanical keyboard, handcrafted keyboard, mechanical keyboard commission, custom keyboard build">
+  <meta property="og:title" content="The Art of the Custom Keystroke — What Makes a Bespoke Keyboard Worth It">
+  <meta property="og:description" content="What separates a bespoke mechanical keyboard commission from anything you can buy off the shelf? We break it down from first consultation to final dispatch.">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://052100cb.run.linkworld.ai/blog/the-art-of-the-custom-keystroke.html">
+
+  <style>
+    :root {
+      --bg: #0e0e10;
+      --surface: #17171a;
+      --surface2: #1f1f24;
+      --fg: #f0ede8;
+      --fg-muted: #9a9590;
+      --accent: #c8a96e;
+      --accent-dim: #8a6e3e;
+      --border: #2a2a30;
+      --radius: 10px;
+      --font-serif: 'Georgia', 'Times New Roman', serif;
+      --font-sans: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-serif);
+      font-weight: normal;
+      letter-spacing: -0.02em;
+    }
+    h1 { font-size: clamp(2.2rem, 5.5vw, 4rem); line-height: 1.1; }
+    h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); line-height: 1.2; }
+    h3 { font-size: 1.2rem; line-height: 1.35; }
+
+    p { color: var(--fg-muted); }
+
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    .article-container { max-width: 740px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 40px;
+      background: rgba(14, 14, 16, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(200, 169, 110, 0.12);
+      transition: padding 0.3s ease;
+    }
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: var(--fg);
+      letter-spacing: 0.04em;
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+    }
+    .nav-logo .logo-mark {
+      width: 32px; height: 32px;
+      background: var(--accent);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; color: #0e0e10; font-weight: bold;
+      flex-shrink: 0;
+    }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      color: var(--fg-muted); text-decoration: none;
+      font-size: 0.88rem; letter-spacing: 0.06em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links a.active { color: var(--accent); }
+    .nav-cta {
+      background: var(--accent); color: #0e0e10;
+      border: none; padding: 10px 22px; border-radius: var(--radius);
+      font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em;
+      text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s;
+      text-decoration: none;
+    }
+    .nav-cta:hover { background: #d4b87e; transform: translateY(-1px); }
+
+    /* ── ARTICLE HERO ── */
+    .article-hero {
+      padding: 140px 0 70px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .article-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 70% 50%, rgba(200, 169, 110, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .article-eyebrow {
+      display: inline-flex; align-items: center; gap: 12px;
+      margin-bottom: 24px;
+    }
+    .eyebrow-tag {
+      font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--accent); border: 1px solid rgba(200, 169, 110, 0.3);
+      padding: 4px 12px; border-radius: 99px;
+    }
+    .eyebrow-meta {
+      font-size: 0.78rem; letter-spacing: 0.1em; color: var(--fg-muted);
+    }
+    .article-hero h1 {
+      margin-bottom: 24px;
+      max-width: 700px;
+    }
+    .article-hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .article-lead {
+      font-size: 1.15rem;
+      color: var(--fg-muted);
+      max-width: 620px;
+      line-height: 1.75;
+      margin-bottom: 36px;
+    }
+    .article-meta-row {
+      display: flex; align-items: center; gap: 24px;
+      flex-wrap: wrap;
+    }
+    .meta-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.8rem; color: var(--fg-muted);
+      letter-spacing: 0.08em;
+    }
+    .meta-dot {
+      width: 4px; height: 4px; border-radius: 50%;
+      background: var(--border);
+    }
+
+    /* ── KEY DECORATION ── */
+    .hero-key-decoration {
+      position: absolute; right: 5%; top: 50%;
+      transform: translateY(-50%);
+      display: grid; grid-template-columns: repeat(4, 48px); gap: 7px;
+      opacity: 0.14; pointer-events: none;
+    }
+    .deco-key {
+      height: 48px; background: var(--surface2);
+      border-radius: 6px; border: 1px solid var(--border);
+    }
+    .deco-key.lit { background: rgba(200, 169, 110, 0.3); border-color: var(--accent); }
+    .deco-key.tall { grid-row: span 2; height: 103px; }
+    @media (max-width: 860px) {
+      .hero-key-decoration { display: none; }
+    }
+
+    /* ── TABLE OF CONTENTS ── */
+    .toc-aside {
+      float: right;
+      width: 260px;
+      margin: 0 0 28px 40px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      font-size: 0.85rem;
+    }
+    .toc-aside h4 {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+    .toc-aside ol {
+      list-style: none;
+      counter-reset: toc;
+    }
+    .toc-aside li {
+      counter-increment: toc;
+      position: relative;
+      padding: 5px 0 5px 22px;
+      border-bottom: 1px solid var(--border);
+      color: var(--fg-muted);
+    }
+    .toc-aside li:last-child { border-bottom: none; }
+    .toc-aside li::before {
+      content: counter(toc, decimal-leading-zero);
+      position: absolute; left: 0;
+      font-size: 0.68rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      top: 6px;
+    }
+    .toc-aside li a {
+      color: var(--fg-muted); text-decoration: none;
+      font-size: 0.82rem; line-height: 1.4;
+      transition: color 0.2s;
+    }
+    .toc-aside li a:hover { color: var(--accent); }
+    @media (max-width: 680px) {
+      .toc-aside {
+        float: none;
+        width: 100%;
+        margin: 0 0 32px 0;
+      }
+    }
+
+    /* ── ARTICLE BODY ── */
+    .article-body {
+      padding: 72px 0 80px;
+    }
+    .prose {
+      font-size: 1.02rem;
+      line-height: 1.82;
+    }
+    .prose h2 {
+      font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+      margin: 56px 0 20px;
+      padding-top: 8px;
+      color: var(--fg);
+    }
+    .prose h3 {
+      font-size: 1.1rem;
+      margin: 36px 0 14px;
+      color: var(--fg);
+      font-family: var(--font-sans);
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+    .prose p {
+      margin-bottom: 22px;
+      color: var(--fg-muted);
+    }
+    .prose p:last-child { margin-bottom: 0; }
+    .prose strong { color: var(--fg); font-weight: 600; }
+    .prose em { font-style: italic; }
+    .prose a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: rgba(200, 169, 110, 0.35);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.2s;
+    }
+    .prose a:hover { text-decoration-color: var(--accent); }
+    .prose ul, .prose ol {
+      margin: 0 0 22px 0;
+      padding-left: 0;
+      list-style: none;
+    }
+    .prose ul li, .prose ol li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 10px;
+      color: var(--fg-muted);
+      font-size: 1.02rem;
+    }
+    .prose ul li::before {
+      content: '◈';
+      position: absolute; left: 0;
+      color: var(--accent); font-size: 0.65rem;
+      top: 7px;
+    }
+    .prose ol {
+      counter-reset: ol-counter;
+    }
+    .prose ol li {
+      counter-increment: ol-counter;
+    }
+    .prose ol li::before {
+      content: counter(ol-counter, decimal-leading-zero) '.';
+      position: absolute; left: 0;
+      color: var(--accent); font-size: 0.72rem;
+      letter-spacing: 0.04em; top: 5px;
+      font-family: var(--font-sans);
+    }
+    .prose blockquote {
+      border-left: 2px solid var(--accent);
+      padding: 4px 0 4px 24px;
+      margin: 32px 0;
+    }
+    .prose blockquote p {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--fg);
+      margin: 0;
+    }
+    .prose blockquote cite {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.78rem;
+      color: var(--fg-muted);
+      font-style: normal;
+      letter-spacing: 0.06em;
+    }
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 52px 0;
+    }
+
+    /* ── PULL QUOTE / CALLOUT ── */
+    .callout {
+      background: var(--surface);
+      border: 1px solid rgba(200, 169, 110, 0.2);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 24px 28px;
+      margin: 32px 0;
+    }
+    .callout p {
+      color: var(--fg);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+    .callout strong { color: var(--accent); }
+
+    /* ── INLINE CTA ── */
+    .inline-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent); color: #0e0e10;
+      padding: 11px 24px; border-radius: var(--radius);
+      font-size: 0.88rem; font-weight: 600; letter-spacing: 0.05em;
+      text-transform: uppercase; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .inline-cta:hover { background: #d4b87e; transform: translateY(-1px); text-decoration: none; }
+    .inline-cta-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--fg);
+      padding: 11px 24px; border-radius: var(--radius);
+      font-size: 0.88rem; font-weight: 600; letter-spacing: 0.05em;
+      text-transform: uppercase; text-decoration: none;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, color 0.2s, transform 0.15s;
+    }
+    .inline-cta-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); text-decoration: none; }
+
+    /* ── CTA BAND ── */
+    .article-cta {
+      background: linear-gradient(135deg, rgba(200,169,110,0.07) 0%, rgba(200,169,110,0.02) 100%);
+      border: 1px solid rgba(200,169,110,0.15);
+      border-radius: 16px;
+      padding: 52px 48px;
+      text-align: center;
+      margin: 64px 0;
+    }
+    .article-cta .eyebrow-tag { margin-bottom: 16px; display: inline-block; }
+    .article-cta h2 { margin-bottom: 14px; }
+    .article-cta p { max-width: 480px; margin: 0 auto 32px; font-size: 1rem; }
+    .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    @media (max-width: 600px) {
+      .article-cta { padding: 36px 24px; }
+      .cta-actions { flex-direction: column; align-items: center; }
+    }
+
+    /* ── AUTHOR CARD ── */
+    .author-card {
+      display: flex; gap: 20px; align-items: flex-start;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 28px;
+      margin-top: 64px;
+    }
+    .author-avatar {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: rgba(200,169,110,0.15);
+      border: 1px solid rgba(200,169,110,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; font-weight: 600; color: var(--accent);
+      flex-shrink: 0;
+    }
+    .author-info h4 {
+      font-family: var(--font-sans); font-weight: 600;
+      font-size: 0.95rem; margin-bottom: 4px; color: var(--fg);
+    }
+    .author-info .author-role {
+      font-size: 0.8rem; color: var(--accent); letter-spacing: 0.06em;
+      text-transform: uppercase; margin-bottom: 10px;
+    }
+    .author-info p {
+      font-size: 0.88rem; line-height: 1.65; color: var(--fg-muted);
+      margin: 0;
+    }
+
+    /* ── RELATED POSTS ── */
+    .related-section {
+      padding: 60px 0;
+      border-top: 1px solid var(--border);
+    }
+    .related-section h3 {
+      font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--fg-muted); margin-bottom: 28px; font-family: var(--font-sans); font-weight: 600;
+    }
+    .related-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .related-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px 24px;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+      display: block;
+    }
+    .related-card:hover { border-color: rgba(200,169,110,0.3); transform: translateY(-3px); }
+    .related-tag {
+      font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 10px; display: block;
+    }
+    .related-card h4 {
+      font-family: var(--font-serif);
+      font-size: 1.1rem; line-height: 1.35; color: var(--fg); margin-bottom: 10px;
+    }
+    .related-card p {
+      font-size: 0.84rem; color: var(--fg-muted); line-height: 1.6; margin: 0;
+    }
+    .related-card .read-more {
+      display: inline-block; margin-top: 14px;
+      font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--accent); text-decoration: none;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 60px 0 32px;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px; margin-bottom: 48px;
+    }
+    .footer-brand p { font-size: 0.88rem; margin-top: 14px; max-width: 260px; line-height: 1.7; color: var(--fg-muted); }
+    .footer-brand .brand-name { font-family: var(--font-serif); font-size: 1.2rem; color: var(--fg); }
+    .footer-col h4 { font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-muted); margin-bottom: 16px; font-weight: 600; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { color: var(--fg-muted); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--accent); }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 28px; border-top: 1px solid var(--border);
+      font-size: 0.8rem; color: var(--fg-muted);
+    }
+    .footer-bottom a { color: var(--fg-muted); text-decoration: none; transition: color 0.2s; }
+    .footer-bottom a:hover { color: var(--accent); }
+
+    /* ── Scroll reveal ── */
+    .reveal {
+      opacity: 1; transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.hidden { opacity: 0; transform: translateY(24px); }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .article-hero { padding: 120px 0 50px; }
+      .article-body { padding: 48px 0 60px; }
+      .author-card { flex-direction: column; gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="../index.html" class="nav-logo">
+    <div class="logo-mark">KA</div>
+    Keystroke Atelier
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html#craft">Craft</a></li>
+    <li><a href="../index.html#builds">Builds</a></li>
+    <li><a href="../index.html#materials">Materials</a></li>
+    <li><a href="../index.html#pricing">Pricing</a></li>
+    <li><a href="#" class="active">Journal</a></li>
+  </ul>
+  <a href="../index.html#pricing" class="nav-cta">Commission</a>
+</nav>
+
+<!-- ARTICLE HERO -->
+<section class="article-hero">
+  <!-- Decorative key grid -->
+  <div class="hero-key-decoration" aria-hidden="true">
+    <div class="deco-key lit"></div>
+    <div class="deco-key"></div>
+    <div class="deco-key"></div>
+    <div class="deco-key lit"></div>
+    <div class="deco-key"></div>
+    <div class="deco-key lit"></div>
+    <div class="deco-key"></div>
+    <div class="deco-key"></div>
+    <div class="deco-key"></div>
+    <div class="deco-key"></div>
+    <div class="deco-key tall lit"></div>
+    <div class="deco-key"></div>
+    <div class="deco-key lit"></div>
+    <div class="deco-key"></div>
+    <div class="deco-key"></div>
+    <div class="deco-key"></div>
+    <div class="deco-key"></div>
+    <div class="deco-key lit"></div>
+    <div class="deco-key"></div>
+    <div class="deco-key"></div>
+  </div>
+
+  <div class="article-container">
+    <div class="article-eyebrow reveal">
+      <span class="eyebrow-tag">Journal</span>
+      <span class="eyebrow-meta">June 12, 2025 &nbsp;·&nbsp; 8 min read</span>
+    </div>
+    <h1 class="reveal">The Art of the Custom Keystroke —<br><em>What Makes a Bespoke Keyboard Worth It</em></h1>
+    <p class="article-lead reveal">Most keyboards are designed to disappear. A bespoke mechanical keyboard is designed to be noticed — to outlast the desk it sits on and to feel, on every keystroke, like it was made for exactly one person. Because it was.</p>
+    <div class="article-meta-row reveal">
+      <div class="meta-item">
+        <span>By the Keystroke Atelier Team</span>
+      </div>
+      <div class="meta-dot"></div>
+      <div class="meta-item">
+        <span>Custom Keyboard Commission · Bespoke Mechanical Keyboard</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE BODY -->
+<article class="article-body">
+  <div class="article-container">
+
+    <!-- Table of Contents -->
+    <aside class="toc-aside reveal">
+      <h4>In This Article</h4>
+      <ol>
+        <li><a href="#off-the-shelf">Bespoke vs. Off-the-Shelf</a></li>
+        <li><a href="#process">The Keystroke Atelier Process</a></li>
+        <li><a href="#materials">Materials, Switches &amp; Keycaps</a></li>
+        <li><a href="#who">Who Commissions a Bespoke Board?</a></li>
+        <li><a href="#start">How to Begin Your Commission</a></li>
+      </ol>
+    </aside>
+
+    <div class="prose reveal">
+
+      <p>There is a particular sound that keyboard enthusiasts describe in terms usually reserved for fine instruments — a deep, even <em>thock</em> on every key press, consistent from corner to corner, absent of rattle or ping. It takes patience to achieve. It takes the right materials, the right assembly, the right ear. And it cannot be mass-produced.</p>
+
+      <p>The <strong>bespoke mechanical keyboard</strong> market has grown quietly but dramatically over the last decade — from a niche of forum-dwellers modding boards in spare rooms to a considered craft practised by specialist ateliers around the world. Today, professionals who type for a living, collectors who appreciate handmade objects, and thoughtful gifters looking for something genuinely personal are turning to custom keyboard commissions as a category apart.</p>
+
+      <p>This article explains exactly what separates a custom commission from anything you can buy at retail, how the Keystroke Atelier process works, what goes into material and component selection, and who this kind of build is really for.</p>
+
+      <hr class="section-divider">
+
+      <!-- SECTION 1 -->
+      <h2 id="off-the-shelf">Bespoke vs. Off-the-Shelf: A Different Category Entirely</h2>
+
+      <p>Walk into any electronics retailer and you'll find shelves of mechanical keyboards — some of them excellent, many of them competently engineered, all of them designed for an imaginary average user. That is both their strength and their fundamental limitation. A retail keyboard has to satisfy the broadest possible audience, which means every design decision — switch weight, case material, keycap legends, sound profile — is a compromise aimed at no one in particular.</p>
+
+      <blockquote>
+        <p>"A mass-market keyboard is designed for everyone. That means it's perfectly calibrated for no one."</p>
+        <cite>— Keystroke Atelier, Build Consultation Notes</cite>
+      </blockquote>
+
+      <h3>The Compromise Stack</h3>
+
+      <p>Retail keyboards accumulate compromises at every layer. The case is typically injection-moulded ABS plastic — cheap to produce, acoustically hollow. The plate is FR4 fibreglass, the default material, not the optimal one. The switches are factory-stock, unlubed, with the inconsistencies that come from automated assembly at scale. The stabilisers rattle. The firmware is closed, inflexible.</p>
+
+      <p>None of this is negligible if you spend eight hours a day at a keyboard. The cumulative effect of those compromises — hollow sound, inconsistent key feel, a case that flexes when you type — adds up to a tool that functions adequately but never feels like <em>yours</em>.</p>
+
+      <h3>What a Custom Keyboard Commission Changes</h3>
+
+      <p>A <strong>custom keyboard commission</strong> inverts this entirely. The build begins not with a product configuration page but with a conversation about how you type, what you hear, what you want to feel. Every component is then selected to serve those specific answers. The result is a keyboard that is, in a literal sense, designed for one person — and that specificity changes the experience fundamentally.</p>
+
+      <div class="callout">
+        <p><strong>The key difference:</strong> Off-the-shelf keyboards are products. A bespoke commission is a build — assembled by hand, tuned by ear, and delivered as a finished instrument rather than a packaged commodity.</p>
+      </div>
+
+      <p>The comparison closest in spirit is not to another keyboard; it is to the difference between a suit bought off a rack and one cut from a pattern made for your body. The off-the-rack suit may be excellent. But it was not made for you.</p>
+
+      <hr class="section-divider">
+
+      <!-- SECTION 2 -->
+      <h2 id="process">The Keystroke Atelier Design and Craftsmanship Process</h2>
+
+      <p>At Keystroke Atelier, we have refined a four-stage build process over the course of more than 340 commissions. Each stage exists for a reason, and none of it is rushed. The six-to-eight-week build window is not a limitation — it is what good work requires.</p>
+
+      <h3>Stage 1: Consultation</h3>
+
+      <p>Every commission begins with a 30-minute call. We come to that call with nothing decided; we leave with everything mapped. We ask about your typing style — are you a heavy bottom-outter, a light glider, somewhere in between? We ask about your environment — open office, home studio, shared workspace? We ask about your aesthetic register — spare and industrial, warm and artisanal, precise and technical?</p>
+
+      <p>We also listen for what you don't say. The commissioner who mentions they write for three hours every morning in silence needs something different from the developer who wants a satisfying, expressive click. Both are valid. Both require different answers.</p>
+
+      <h3>Stage 2: Specification and Sourcing</h3>
+
+      <p>From the consultation, we build a full bill of materials. This document is shared with you before anything is ordered, complete with alternatives at different price points. We source from our network of trusted suppliers — not the cheapest available, but the most reliable and the most appropriate for your specific build profile.</p>
+
+      <p>This stage includes switch selection from our curated library of 48 options, plate material choice, stabiliser specification, and keycap set sourcing. If a particular keycap set is on group buy, we coordinate; if it needs to be commissioned from an artisan maker in our network, we facilitate. Nothing is left to chance or to "whatever's in stock."</p>
+
+      <h3>Stage 3: Atelier Build</h3>
+
+      <p>Assembly takes place in our workshop. Every solder joint is inspected under magnification. Every switch is individually hand-lubed — a process that takes roughly 30 minutes per full-size board and cannot be automated without loss of quality. Stabilisers receive a full Krytox treatment. Films are applied where the switch profile demands it.</p>
+
+      <p>Acoustic tuning is handled at this stage too. We test the assembled board against a reference recording, then adjust foam layers, plate material, and mounting configuration until the sound profile matches what was specified at consultation. This is a craft skill, not a checkable specification — and it is what separates a tuned build from an assembled one.</p>
+
+      <h3>Stage 4: Quality Audit and Dispatch</h3>
+
+      <p>Before any board leaves the workshop, it undergoes a 72-hour burn-in and a full key-press test on an oscilloscope to verify switch actuation consistency. We produce a sound recording of the finished board, shared with you for approval before we ship. The board travels in a custom hard case, with a full build document — component list, assembly notes, firmware documentation, and care guide.</p>
+
+      <p>This is not a process that can be done in a week. It should not be. <a href="../index.html#builds">Read more about the Keystroke Atelier four-stage build process →</a></p>
+
+      <hr class="section-divider">
+
+      <!-- SECTION 3 -->
+      <h2 id="materials">Materials, Switches, and Keycap Customisation</h2>
+
+      <p>The options available in a bespoke commission go far beyond anything offered by a retail configurator. Here is how we approach each layer of the build.</p>
+
+      <h3>Case Materials</h3>
+
+      <p>The case is the acoustic foundation of the keyboard. At the entry level, polycarbonate and FR4 offer a bright, slightly hollow sound that suits clicky switches and lighter builds. Mid-range commissions use 6063-T5 aerospace aluminum, CNC-milled to precise tolerances and anodized in one of 24 colorways — from raw brushed silver to desert bronze, midnight navy, and oxblood gloss.</p>
+
+      <p>At the Maison tier, the case is custom-machined from scratch. If you want a keyboard that matches the grain of your walnut desk, or one that bears a subtle engraved motif on the weight insert, that begins here.</p>
+
+      <h3>Switch Selection: Your Feel Profile</h3>
+
+      <p>Switches are perhaps the most personal component in any <strong>handcrafted keyboard</strong>. We carry 48 curated options across four feel profiles:</p>
+
+      <ul>
+        <li><strong>Linear:</strong> Smooth, consistent keystrokes with no tactile feedback — preferred by speed typists and gamers. Our favourites include Gateron Oil Kings and Boba LTs.</li>
+        <li><strong>Tactile:</strong> A satisfying bump that confirms key registration — preferred by writers, coders, and editors. Holy Pandas and U4Ts are perennial favourites among our commissioners.</li>
+        <li><strong>Clicky:</strong> Tactile bump with an audible click — expressive, classic, and deeply satisfying. Box Navies remain among the most-requested clicky options in our library.</li>
+        <li><strong>Silent:</strong> Dampened top and bottom-out, near-noiseless operation. Ideal for shared spaces and open offices. The Topre 45g and Boba U4 are our most-specified silent options.</li>
+      </ul>
+
+      <p>If you are unsure which profile suits you, we send a sampler board before finalising specification. Choosing a switch by reading a specification sheet is insufficient — the feel of 45 actuation grams under your specific typing style is a different thing from what any number on paper conveys.</p>
+
+      <h3>Keycap Options</h3>
+
+      <p>Keycaps are the surface you touch hundreds of thousands of times a year. We source from the world's leading manufacturers — GMK for thick doubleshot ABS with exceptional legends, ePBT for dye-sublimated PBT with a drier, more textured surface feel, and Signature Plastics for the vintage tactility of SA and DSA profiles.</p>
+
+      <p>For Maison-tier commissions, we work with our artisan maker network to commission entirely original keycap sets — sculpted, painted, or cast resin artisans for the escape key and modifiers that make the board unmistakably unique. No two are the same.</p>
+
+      <p><a href="../index.html#materials">Explore our full materials guide, including case anodize options and plate materials →</a></p>
+
+      <hr class="section-divider">
+
+      <!-- SECTION 4 -->
+      <h2 id="who">Who Commissions a Bespoke Keyboard?</h2>
+
+      <p>The clients who commission with Keystroke Atelier are not uniform. They range widely in background, use-case, and motivation — but they share a common thread: they believe that the tools they use should be worthy of the work they do.</p>
+
+      <h3>The Professional Who Types for a Living</h3>
+
+      <p>Writers, developers, designers, and lawyers — people for whom the keyboard is a primary instrument — are among our most loyal commissioners. For someone who types a hundred thousand words a month, a keyboard that reduces fatigue, inspires consistency, and sounds good while doing it is a professional investment with a clear return.</p>
+
+      <p>The comparison here is to the professional musician who uses a hand-fitted instrument, or the surgeon who has their scissors adjusted to their grip. The tool is not incidental. The tool shapes the experience of the work.</p>
+
+      <h3>The Thoughtful Gifter</h3>
+
+      <p>A bespoke mechanical keyboard is one of the most personal gifts imaginable for someone who works at a desk. It says not just "I thought of you," but "I understood exactly what you'd love, and I had it made." For milestone birthdays, retirements, promotions, or simply as a considered expression of respect, a commission ordered on a recipient's behalf — with a consultation call included — is in a category with very few peers.</p>
+
+      <blockquote>
+        <p>"I ordered a Maison commission for my business partner of fifteen years. The build log photos alone were worth framing. He said it was the best gift he'd ever received."</p>
+        <cite>— Commissioner, London (Maison Tier)</cite>
+      </blockquote>
+
+      <h3>The Collector</h3>
+
+      <p>The custom keyboard market has developed a genuine collector culture. Group-buy sets, limited anodize runs, artisan keycaps, and bespoke builds hold — and often grow — their value over time in a way that no off-the-shelf keyboard ever will. A Keystroke Atelier Maison commission is a numbered build, documented with photography and a full component register, and built to standards that will outlast its commissioner by decades.</p>
+
+      <p>For collectors who already own notable community group-buy boards, a fully bespoke commission is the natural next step: a piece that exists in exactly one iteration, in the world, ever.</p>
+
+      <hr class="section-divider">
+
+      <!-- SECTION 5 -->
+      <h2 id="start">How to Begin Your Commission</h2>
+
+      <p>The process of commissioning a bespoke keyboard from Keystroke Atelier begins with a 30-minute consultation — free, without obligation, and entirely focused on understanding what you want. You don't need to know what switches you want, what case material suits you, or what keycap profile fits your typing style. That's what the consultation is for.</p>
+
+      <p>We accept a limited number of commissions each month to ensure every build receives the attention it deserves. Current lead times are 6–8 weeks from deposit, depending on component availability and tier.</p>
+
+      <div class="callout">
+        <p>Our <a href="../index.html#pricing"><strong>commission guide</strong></a> walks through all three tiers — Foundry, Atelier, and Maison — with full component lists, pricing, and turnaround times. If you are unsure which tier suits your needs, the consultation call will clarify that quickly.</p>
+      </div>
+    </div>
+
+    <!-- In-article CTA -->
+    <div class="article-cta reveal">
+      <span class="eyebrow-tag">Start Here</span>
+      <h2>Your commission begins with a conversation.</h2>
+      <p>Book a free 30-minute consultation. No obligation — just a focused discussion about what your ideal keyboard looks, feels, and sounds like.</p>
+      <div class="cta-actions">
+        <a href="../index.html#pricing" class="inline-cta">View Commission Tiers</a>
+        <a href="../index.html#builds" class="inline-cta-ghost">See Our Process</a>
+      </div>
+    </div>
+
+    <!-- Author -->
+    <div class="author-card reveal">
+      <div class="author-avatar">KA</div>
+      <div class="author-info">
+        <h4>Keystroke Atelier Editorial</h4>
+        <div class="author-role">Workshop · London</div>
+        <p>The Keystroke Atelier team writes about bespoke mechanical keyboard commissions, the craft of keyboard building, and the materials and components that make the difference. Every article is reviewed by the builders who do the work.</p>
+      </div>
+    </div>
+
+  </div><!-- /article-container -->
+
+  <!-- Related reading -->
+  <div class="related-section">
+    <div class="article-container">
+      <h3>Continue Reading</h3>
+      <div class="related-grid">
+        <a href="../index.html#craft" class="related-card reveal">
+          <span class="related-tag">Craft</span>
+          <h4>Not Assembled. Composed.</h4>
+          <p>Explore the six craft pillars that define every Keystroke Atelier build — from acoustic tuning to artisan keycap sourcing.</p>
+          <span class="read-more">Explore →</span>
+        </a>
+        <a href="../index.html#materials" class="related-card reveal">
+          <span class="related-tag">Materials</span>
+          <h4>Substance Beneath the Surface</h4>
+          <p>Aerospace aluminum, POM plates, gold-plated PCB contacts — a breakdown of the materials that define premium keyboard builds.</p>
+          <span class="read-more">Explore →</span>
+        </a>
+        <a href="../index.html#pricing" class="related-card reveal">
+          <span class="related-tag">Commission Guide</span>
+          <h4>Invest in Your Instrument</h4>
+          <p>Compare the Foundry, Atelier, and Maison commission tiers. Find the right entry point for your build and your budget.</p>
+          <span class="read-more">View Tiers →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</article>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand-name">Keystroke Atelier</div>
+        <p>Bespoke mechanical keyboards crafted with obsessive care. Every build is a collaboration between maker and commissioner, resulting in an instrument that's entirely yours.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Commission</h4>
+        <ul>
+          <li><a href="../index.html#pricing">Foundry Tier</a></li>
+          <li><a href="../index.html#pricing">Atelier Tier</a></li>
+          <li><a href="../index.html#pricing">Maison Tier</a></li>
+          <li><a href="../index.html#pricing">Gift a Build</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Craft</h4>
+        <ul>
+          <li><a href="../index.html#switches">Switch Guide</a></li>
+          <li><a href="../index.html#materials">Materials</a></li>
+          <li><a href="../index.html#builds">Build Process</a></li>
+          <li><a href="../index.html#materials">Keycap Index</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Atelier</h4>
+        <ul>
+          <li><a href="../index.html">About Us</a></li>
+          <li><a href="../index.html#builds">Our Process</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Keystroke Atelier. All rights reserved.</span>
+      <div style="display:flex;gap:24px;">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Warranty</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Nav shrink on scroll ──
+  const nav = document.getElementById('main-nav');
+  if (nav) {
+    window.addEventListener('scroll', () => {
+      nav.style.padding = window.scrollY > 60 ? '12px 40px' : '20px 40px';
+    }, { passive: true });
+  }
+
+  // ── Scroll reveal ──
+  const reveals = document.querySelectorAll('.reveal');
+
+  function initReveal() {
+    reveals.forEach(el => {
+      if (el.getBoundingClientRect().top > window.innerHeight * 0.92) {
+        el.classList.add('hidden');
+      }
+    });
+  }
+
+  function checkReveal() {
+    reveals.forEach(el => {
+      if (!el.classList.contains('hidden')) return;
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.88) {
+        el.classList.remove('hidden');
+      }
+    });
+  }
+
+  initReveal();
+  window.addEventListener('scroll', checkReveal, { passive: true });
+
+  // ── Stagger related cards ──
+  document.querySelectorAll('.related-grid .related-card').forEach((el, i) => {
+    el.style.transitionDelay = (i * 0.08) + 's';
+  });
+
+  // ── Active ToC highlight ──
+  const sections = document.querySelectorAll('h2[id]');
+  const tocLinks = document.querySelectorAll('.toc-aside a');
+
+  function updateToc() {
+    let current = '';
+    sections.forEach(section => {
+      if (window.scrollY >= section.offsetTop - 120) {
+        current = section.getAttribute('id');
+      }
+    });
+    tocLinks.forEach(link => {
+      link.style.color = link.getAttribute('href') === '#' + current
+        ? 'var(--accent)' : '';
+    });
+  }
+
+  window.addEventListener('scroll', updateToc, { passive: true });
+</script>
+</body>
+</html>
