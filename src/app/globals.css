@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* Blog post body — minimal readable defaults (Tailwind preflight strips
+   margins). Inherits the site's colors via currentColor; restyle freely. */
+.post-body h2 { font-size: 1.5em; font-weight: 600; margin: 1.6em 0 0.6em; }
+.post-body h3 { font-size: 1.25em; font-weight: 600; margin: 1.4em 0 0.5em; }
+.post-body p { margin: 1em 0; line-height: 1.75; }
+.post-body ul, .post-body ol { margin: 1em 0; padding-left: 1.5em; }
+.post-body ul { list-style: disc; }
+.post-body ol { list-style: decimal; }
+.post-body a { text-decoration: underline; }
+.post-body blockquote { border-left: 2px solid currentColor; padding-left: 1em; opacity: 0.8; margin: 1.5em 0; }
+.post-body img { border-radius: 0.5em; margin: 1.5em 0; }
+.post-body strong { font-weight: 600; }
